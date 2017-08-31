@@ -13,6 +13,7 @@ namespace RabiRibiMapViewer
         public UInt16 currentArea;
         public int changeCounter = 0;
         public int currentRoomX = 0, currentRoomY = 0;
+        public bool loaded = false;
         public readonly int[] verticalHeights = { 12, 11, 11, 11, 12, 11, 11, 11, 12, 11, 11, 11, 12, 11, 11, 11, 12, 8 };
 
         public Map()
@@ -85,6 +86,7 @@ namespace RabiRibiMapViewer
                 }
                 currentArea = mh.areaID;
             }
+            loaded = true;
         }
     }
 

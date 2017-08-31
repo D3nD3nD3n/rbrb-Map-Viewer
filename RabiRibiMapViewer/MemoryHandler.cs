@@ -9,7 +9,7 @@ namespace RabiRibiMapViewer
     {
         Process gameProcess;
         private IntPtr baseAddress;
-        private IntPtr[] Sprite1Address, StyleAddress, CacheColorAddress, CacheStyleAddress, mapIDAddress, bexAddress;
+        private IntPtr[] Sprite1Address, StyleAddress, CacheColorAddress, CacheStyleAddress, mapIDAddress, bexAddress, cocoaAddress;
         private IntPtr[] upperLeftRoomArray, upperLeftMapArray, upperLeftMapCacheColorArray, upperLeftMapCacheStyleArray;
         public int version = 0;
         public UInt16 areaID = 0;
@@ -59,6 +59,17 @@ namespace RabiRibiMapViewer
                                             IntPtr.Add(baseAddress, 0xA421C8),//1.71
                                             IntPtr.Add(baseAddress, 0xA3B140),//1.70
                                             IntPtr.Add(baseAddress, 0xA176E0)//1.65
+            };
+
+            //scan decimal byte array 241 3 0 0
+            cocoaAddress = new IntPtr[] { IntPtr.Add(baseAddress, 0x271509),//1.80 
+                                            IntPtr.Add(baseAddress, 0x29DCD2),//1.75
+                                            IntPtr.Add(baseAddress, 0x29ED92),//1.75lm
+                                            IntPtr.Add(baseAddress, 0x29D112),//1.71
+                                            IntPtr.Add(baseAddress, 0x29B512),//1.70
+                                            IntPtr.Add(baseAddress, 0x27c658)//1.65
+
+
             };
 
             version = matchVersion();
@@ -165,13 +176,18 @@ namespace RabiRibiMapViewer
         {
             int bytesRead;
             byte[] BUNNY_EX = new byte[] { 66, 85, 78, 78, 89, 32, 69, 88 };
+            byte[] cocoa_byte = new byte[] { 241, 3, 0, 0 };
             for(int i = 0; i < bexAddress.Length; i++)
             {
-                byte[] byteString = MemoryApi.ReadMemoryPtr(gameProcess, bexAddress[i], 8, out bytesRead);
+                byte[] byteArray = MemoryApi.ReadMemoryPtr(gameProcess, bexAddress[i], 8, out bytesRead);
                 
-                if(byteString.SequenceEqual(BUNNY_EX))
+                if(byteArray.SequenceEqual(BUNNY_EX))
                 {
-                    return i;
+                    byteArray = MemoryApi.ReadMemoryPtr(gameProcess, cocoaAddress[i], 4, out bytesRead);
+                    if(byteArray.SequenceEqual(cocoa_byte))
+                    {
+                        return i;
+                    }
                 }
             }
             return -1;
