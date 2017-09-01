@@ -42,6 +42,7 @@
             this.buttonRoomMoveRight = new System.Windows.Forms.Button();
             this.buttonRoomMoveUp = new System.Windows.Forms.Button();
             this.buttonRoomMoveLeft = new System.Windows.Forms.Button();
+            this.buttonRoomReload = new System.Windows.Forms.Button();
             this.buttonRoomCommitChanges = new System.Windows.Forms.Button();
             this.checkBoxRoomAutoCommit = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -78,7 +79,6 @@
             this.textBoxFilePath = new System.Windows.Forms.TextBox();
             this.buttonPickMap = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.buttonRoomReload = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageMap.SuspendLayout();
             this.tabPageRoom.SuspendLayout();
@@ -300,6 +300,16 @@
             this.buttonRoomMoveLeft.Text = "<";
             this.buttonRoomMoveLeft.UseVisualStyleBackColor = true;
             this.buttonRoomMoveLeft.Click += new System.EventHandler(this.buttonMoveLeft_Click);
+            // 
+            // buttonRoomReload
+            // 
+            this.buttonRoomReload.Location = new System.Drawing.Point(858, 207);
+            this.buttonRoomReload.Name = "buttonRoomReload";
+            this.buttonRoomReload.Size = new System.Drawing.Size(75, 23);
+            this.buttonRoomReload.TabIndex = 7;
+            this.buttonRoomReload.Text = "Reload";
+            this.buttonRoomReload.UseVisualStyleBackColor = true;
+            this.buttonRoomReload.Click += new System.EventHandler(this.buttonRoomReload_Click);
             // 
             // buttonRoomCommitChanges
             // 
@@ -720,20 +730,20 @@
             // 
             // tableLayoutPanelRoomCollisionCollisions
             // 
-            this.tableLayoutPanelRoomCollisionCollisions.ColumnCount = 2;
-            this.tableLayoutPanelRoomCollisionCollisions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelRoomCollisionCollisions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelRoomCollisionCollisions.ColumnCount = 4;
+            this.tableLayoutPanelRoomCollisionCollisions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelRoomCollisionCollisions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelRoomCollisionCollisions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelRoomCollisionCollisions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelRoomCollisionCollisions.Location = new System.Drawing.Point(974, 3);
             this.tableLayoutPanelRoomCollisionCollisions.Name = "tableLayoutPanelRoomCollisionCollisions";
-            this.tableLayoutPanelRoomCollisionCollisions.RowCount = 7;
-            this.tableLayoutPanelRoomCollisionCollisions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanelRoomCollisionCollisions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanelRoomCollisionCollisions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanelRoomCollisionCollisions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanelRoomCollisionCollisions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanelRoomCollisionCollisions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanelRoomCollisionCollisions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanelRoomCollisionCollisions.Size = new System.Drawing.Size(104, 364);
+            this.tableLayoutPanelRoomCollisionCollisions.RowCount = 5;
+            this.tableLayoutPanelRoomCollisionCollisions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelRoomCollisionCollisions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelRoomCollisionCollisions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelRoomCollisionCollisions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelRoomCollisionCollisions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelRoomCollisionCollisions.Size = new System.Drawing.Size(208, 260);
             this.tableLayoutPanelRoomCollisionCollisions.TabIndex = 1;
             this.tableLayoutPanelRoomCollisionCollisions.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.tableLayoutPanelRoomCollisionCollisions_CellPaint);
             // 
@@ -821,16 +831,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // buttonRoomReload
-            // 
-            this.buttonRoomReload.Location = new System.Drawing.Point(858, 207);
-            this.buttonRoomReload.Name = "buttonRoomReload";
-            this.buttonRoomReload.Size = new System.Drawing.Size(75, 23);
-            this.buttonRoomReload.TabIndex = 7;
-            this.buttonRoomReload.Text = "Reload";
-            this.buttonRoomReload.UseVisualStyleBackColor = true;
-            this.buttonRoomReload.Click += new System.EventHandler(this.buttonRoomReload_Click);
             // 
             // MapViewerForm
             // 

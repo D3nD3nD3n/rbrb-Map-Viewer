@@ -85,8 +85,8 @@ namespace RabiRibiMapViewer
                     PB.Size = new Size(48, 48);
                     PB.SizeMode = PictureBoxSizeMode.StretchImage;
                     PB.Margin = new Padding(0, 0, 0, 0);
-                    PB.Tag = i + j * 2;
-                    PB.Image = getCollisionByID(i + j * 2);
+                    PB.Tag = i + j * 4;
+                    PB.Image = getCollisionByID(i + j * 4);
 
                     TLPCollisions.Controls.Add(PB, i, j);
                     PB.Click += PB_selectCollision;
