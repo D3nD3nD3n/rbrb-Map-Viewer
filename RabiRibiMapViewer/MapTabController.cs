@@ -19,7 +19,7 @@ namespace RabiRibiMapViewer
         private int roomX, roomY;
 
         public Dictionary<int, Color> mapColors = new Dictionary<int, Color>
-        {
+        {//
             {0, Color.White },
             {1, Color.FromArgb(116, 187, 109) },
             {2, Color.FromArgb(102, 109, 167) },
