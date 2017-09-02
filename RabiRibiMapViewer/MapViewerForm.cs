@@ -37,37 +37,51 @@ namespace RabiRibiMapViewer
 
         private void loadSheets()
         {
-
+            bool sheetFound = false;
             if (File.Exists(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\TILE1_A.PNG"))
             {
                 SpriteSheet = (Bitmap)Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\TILE1_A.PNG");
+                sheetFound = true;
             }
             else if (File.Exists(Directory.GetCurrentDirectory() + "\\TILE1_A.PNG"))
             {
                 SpriteSheet = (Bitmap)Image.FromFile(Directory.GetCurrentDirectory() + "\\TILE1_A.PNG");
+                sheetFound = true;
             }
             else
             {
                 SpriteSheet = Properties.Resources.noImage;
-                MessageBox.Show("Put TILE1_A.PNG into executable's folder or The RabiRibiMapViewer folder inside the solution folder.", "Missing Sprite Sheet.", MessageBoxButtons.OK);
+                MessageBox.Show("Put TILE1_A.PNG into executable's folder.", "Missing Sprite Sheet.", MessageBoxButtons.OK);
             }
 
+            if (SpriteSheet == null && sheetFound == true)
+            {
+                SpriteSheet = Properties.Resources.noImage;
+                MessageBox.Show("Sprite sheet was found, but it failed to load.", "", MessageBoxButtons.OK);
+            }
+
+            sheetFound = false;
             if (File.Exists(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\COLLISION_TILES.PNG"))
             {
                 collisionSheet = (Bitmap)Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\COLLISION_TILES.PNG");
+                sheetFound = true;
             }
             else if (File.Exists(Directory.GetCurrentDirectory() + "\\COLLISION_TILES.PNG"))
             {
                 collisionSheet = (Bitmap)Image.FromFile(Directory.GetCurrentDirectory() + "\\COLLISION_TILES.PNG");
+                sheetFound = true;
             }
             else
             {
                 collisionSheet = Properties.Resources.noImage;
-                MessageBox.Show("Put COLLISION_TILES.PNG into executable's folder or The RabiRibiMapViewer folder inside the solution folder.", "Missing Sprite Sheet.", MessageBoxButtons.OK);
+                MessageBox.Show("Put COLLISION_TILES.PNG into executable's folder.", "Missing Sprite Sheet.", MessageBoxButtons.OK);
             }
-            /*SpriteSheet = Properties.Resources.TILE1_A;
 
-            collisionSheet = Properties.Resources.COLLISION_TILES;*/
+            if(collisionSheet == null && sheetFound == true)
+            {
+                collisionSheet = Properties.Resources.noImage;
+                MessageBox.Show("Collision sheet was found, but it failed to load.", "", MessageBoxButtons.OK);
+            }
         }
         private void buttonMapLoadMemory_Click(object sender, EventArgs e)
         {
