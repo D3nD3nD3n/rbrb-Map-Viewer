@@ -63,29 +63,9 @@ namespace RabiRibiMapViewer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap COLLISION_TILES {
-            get {
-                object obj = ResourceManager.GetObject("COLLISION_TILES", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap noImage {
             get {
                 object obj = ResourceManager.GetObject("noImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TILE1_A {
-            get {
-                object obj = ResourceManager.GetObject("TILE1_A", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

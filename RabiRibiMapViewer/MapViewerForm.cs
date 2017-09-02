@@ -37,9 +37,37 @@ namespace RabiRibiMapViewer
 
         private void loadSheets()
         {
-                SpriteSheet = Properties.Resources.TILE1_A;
-             
-                collisionSheet = Properties.Resources.COLLISION_TILES;
+
+            if (File.Exists(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\TILE1_A.PNG"))
+            {
+                SpriteSheet = (Bitmap)Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\TILE1_A.PNG");
+            }
+            else if (File.Exists(Directory.GetCurrentDirectory() + "\\TILE1_A.PNG"))
+            {
+                SpriteSheet = (Bitmap)Image.FromFile(Directory.GetCurrentDirectory() + "\\TILE1_A.PNG");
+            }
+            else
+            {
+                SpriteSheet = Properties.Resources.noImage;
+                MessageBox.Show("Put TILE1_A.PNG into executable's folder or The RabiRibiMapViewer folder inside the solution folder.", "Missing Sprite Sheet.", MessageBoxButtons.OK);
+            }
+
+            if (File.Exists(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\COLLISION_TILES.PNG"))
+            {
+                collisionSheet = (Bitmap)Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\COLLISION_TILES.PNG");
+            }
+            else if (File.Exists(Directory.GetCurrentDirectory() + "\\COLLISION_TILES.PNG"))
+            {
+                collisionSheet = (Bitmap)Image.FromFile(Directory.GetCurrentDirectory() + "\\COLLISION_TILES.PNG");
+            }
+            else
+            {
+                collisionSheet = Properties.Resources.noImage;
+                MessageBox.Show("Put COLLISION_TILES.PNG into executable's folder or The RabiRibiMapViewer folder inside the solution folder.", "Missing Sprite Sheet.", MessageBoxButtons.OK);
+            }
+            /*SpriteSheet = Properties.Resources.TILE1_A;
+
+            collisionSheet = Properties.Resources.COLLISION_TILES;*/
         }
         private void buttonMapLoadMemory_Click(object sender, EventArgs e)
         {
