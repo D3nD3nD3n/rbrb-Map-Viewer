@@ -11,7 +11,7 @@ namespace RabiRibiMapViewer
         private IntPtr baseAddress;
         private IntPtr[] Sprite1Address, StyleAddress, CacheColorAddress, CacheStyleAddress, mapIDAddress, bexAddress, cocoaAddress;
         private IntPtr[] upperLeftRoomArray, upperLeftMapArray, upperLeftMapCacheColorArray, upperLeftMapCacheStyleArray;
-        public int version = 0;
+        public int version = -1;
         public UInt16 areaID = 0;
 
         public MemoryHandler()
@@ -21,7 +21,7 @@ namespace RabiRibiMapViewer
             {
                 fillAddresses();
             }
-            if(version == -1)
+            if(version == -1 && gameProcess != null)
             {
                 MessageBox.Show("Can't find a matching version.");
             }

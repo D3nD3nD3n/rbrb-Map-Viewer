@@ -98,7 +98,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\COLLISION_TILES.png" />
     <Content Include="Resources\noImage.png" />
+    <Content Include="Resources\TILE1_A.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
