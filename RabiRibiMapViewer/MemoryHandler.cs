@@ -53,7 +53,8 @@ namespace RabiRibiMapViewer
             baseAddress = gameProcess.MainModule.BaseAddress;
 
             //scan decimal byte array 66 85 78 78 89 32 69 88
-            bexAddress = new IntPtr[] {IntPtr.Add(baseAddress, 0x12DE9B0),//1.80
+            bexAddress = new IntPtr[] {IntPtr.Add(baseAddress, 0x12DF9B0),//1.80e
+                                            IntPtr.Add(baseAddress, 0x12DE9B0),//1.80
                                             IntPtr.Add(baseAddress, 0xA441C8),//1.75
                                             IntPtr.Add(baseAddress, 0xA45208),//1.75lm
                                             IntPtr.Add(baseAddress, 0xA421C8),//1.71
@@ -62,7 +63,8 @@ namespace RabiRibiMapViewer
             };
 
             //scan decimal byte array 241 3 0 0
-            cocoaAddress = new IntPtr[] { IntPtr.Add(baseAddress, 0x271509),//1.80 
+            cocoaAddress = new IntPtr[] {   IntPtr.Add(baseAddress, 0x271489),//1.80e
+                                            IntPtr.Add(baseAddress, 0x271509),//1.80 
                                             IntPtr.Add(baseAddress, 0x29DCD2),//1.75
                                             IntPtr.Add(baseAddress, 0x29ED92),//1.75lm
                                             IntPtr.Add(baseAddress, 0x29D112),//1.71
@@ -78,7 +80,8 @@ namespace RabiRibiMapViewer
                 return;
             }
             //Scan 51118828, 4 byte in woodlands, take first value and subtract 0x970
-            Sprite1Address = new IntPtr[] { IntPtr.Add(baseAddress, 0xAC2168),//1.80
+            Sprite1Address = new IntPtr[] {IntPtr.Add(baseAddress, 0xAC3168),//1.80e
+                                            IntPtr.Add(baseAddress, 0xAC2168),//1.80
                                             IntPtr.Add(baseAddress, 0xE47290),//1.75
                                             IntPtr.Add(baseAddress, 0xE48310),//1.75lm
                                             IntPtr.Add(baseAddress, 0xE45290),//1.71
@@ -88,7 +91,8 @@ namespace RabiRibiMapViewer
             };
 
             //Scan 5, 2 byte in town, compare for left exit and subtract 0x138
-            StyleAddress = new IntPtr[] { IntPtr.Add(baseAddress, 0xA5FC58),//1.80
+            StyleAddress = new IntPtr[] { IntPtr.Add(baseAddress, 0xA60C58),//1.80e
+                                          IntPtr.Add(baseAddress, 0xA5FC58),//1.80
                                           IntPtr.Add(baseAddress, 0xDE4D80),//1.75
                                           IntPtr.Add(baseAddress, 0xDE5E00),//1.75lm
                                           IntPtr.Add(baseAddress, 0xDE2D80),//1.71
@@ -96,7 +100,8 @@ namespace RabiRibiMapViewer
                                           IntPtr.Add(baseAddress, 0xDB72B0)//1.65
             };
 
-            CacheColorAddress = new IntPtr[] { IntPtr.Add(baseAddress, 0x12C8E60),//1.80
+            CacheColorAddress = new IntPtr[] {IntPtr.Add(baseAddress, 0x12C9E60),//1.80e
+                                               IntPtr.Add(baseAddress, 0x12C8E60),//1.80
                                                IntPtr.Add(baseAddress, 0xA5C260),//1.75
                                                IntPtr.Add(baseAddress, 0xA5D290),//1.75lm
                                                IntPtr.Add(baseAddress, 0xA5A260),//1.71
@@ -105,7 +110,8 @@ namespace RabiRibiMapViewer
 
             };
 
-            CacheStyleAddress = new IntPtr[] { IntPtr.Add(baseAddress, 0x12C5620),//1.80
+            CacheStyleAddress = new IntPtr[] { IntPtr.Add(baseAddress, 0x12C6620),//1.80e
+                                               IntPtr.Add(baseAddress, 0x12C5620),//1.80
                                                IntPtr.Add(baseAddress, 0xA58A20),//1.75
                                                IntPtr.Add(baseAddress, 0xA59A50),//1.75lm
                                                IntPtr.Add(baseAddress, 0xA56A20),//1.71
@@ -114,7 +120,8 @@ namespace RabiRibiMapViewer
 
             };
 
-            mapIDAddress = new IntPtr[] { IntPtr.Add(baseAddress, 0x138024C),//1.80
+            mapIDAddress = new IntPtr[] { IntPtr.Add(baseAddress, 0x138124C),//1.80e
+                                          IntPtr.Add(baseAddress, 0x138024C),//1.80
                                           IntPtr.Add(baseAddress, 0xAB8074),//1.75
                                           IntPtr.Add(baseAddress, 0xAB90E4),//1.75lm
                                           IntPtr.Add(baseAddress, 0xAB6074),//1.71

@@ -345,7 +345,7 @@
             this.listBoxRoomLayerSpriteOrder.FormattingEnabled = true;
             this.listBoxRoomLayerSpriteOrder.Items.AddRange(new object[] {
             "Collision",
-            "Entities",
+            "Events",
             "Items",
             "Sprite 0",
             "Sprite 3",
@@ -374,7 +374,7 @@
             this.listBoxRoomLayerMemoryOrder.FormattingEnabled = true;
             this.listBoxRoomLayerMemoryOrder.Items.AddRange(new object[] {
             "Collision",
-            "Entities",
+            "Events",
             "Items",
             "Sprite 0",
             "Sprite 1",

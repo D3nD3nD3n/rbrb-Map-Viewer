@@ -37,6 +37,8 @@ namespace RabiRibiMapViewer
 
         private void loadSheets()
         {
+            SpriteSheet = Properties.Resources.noImage;
+            collisionSheet = Properties.Resources.noImage;
             bool sheetFound = false;
             if (File.Exists(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\TILE1_A.PNG"))
             {
