@@ -37,9 +37,9 @@ namespace RabiRibiMapViewer
 
         private void loadSheets()
         {
-            SpriteSheet = Properties.Resources.noImage;
-            collisionSheet = Properties.Resources.noImage;
-            bool sheetFound = false;
+            SpriteSheet = Properties.Resources.TILE1_A;
+            collisionSheet = Properties.Resources.COLLISION_TILES;
+            /*bool sheetFound = false;
             if (File.Exists(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\TILE1_A.PNG"))
             {
                 SpriteSheet = (Bitmap)Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\TILE1_A.PNG");
@@ -83,7 +83,7 @@ namespace RabiRibiMapViewer
             {
                 collisionSheet = Properties.Resources.noImage;
                 MessageBox.Show("Collision sheet was found, but it failed to load.", "", MessageBoxButtons.OK);
-            }
+            }*/
         }
         private void buttonMapLoadMemory_Click(object sender, EventArgs e)
         {

@@ -98,6 +98,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\COLLISION_TILES.png" />
+    <Content Include="Resources\TILE1_A.PNG" />
     <Content Include="Resources\noImage.png" />
   </ItemGroup>
   <ItemGroup>
