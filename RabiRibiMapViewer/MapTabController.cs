@@ -94,7 +94,8 @@ namespace RabiRibiMapViewer
             TextBox tb = (TextBox)sender;
             try
             {
-                UInt16 newValue = UInt16.Parse(tb.Text);
+                Int16 displayValue = Int16.Parse(tb.Text);
+                UInt16 newValue = map.shortToUshort(displayValue);
                 tb.Tag = tb.Text;
                 if (CBAutoCommit.Checked)
                 {
@@ -277,8 +278,8 @@ namespace RabiRibiMapViewer
             {
                 for (int j = 0; j < 18; j++)
                 {
-                    tableFullMap.GetControlFromPosition(i, j).Text = mapInfoLayer[i, j].ToString();
-                    tableFullMap.GetControlFromPosition(i, j).Tag = mapInfoLayer[i, j].ToString();
+                    tableFullMap.GetControlFromPosition(i, j).Text = map.ushortToShort(mapInfoLayer[i, j]).ToString();
+                    tableFullMap.GetControlFromPosition(i, j).Tag = map.ushortToShort(mapInfoLayer[i, j]).ToString();
                 }
             }
         }
@@ -321,7 +322,7 @@ namespace RabiRibiMapViewer
             {
                 for (int j = 0; j < 17; j++)
                 {
-                    currentLayerValueArray[j + i * 18] = UInt16.Parse(tableFullMap.GetControlFromPosition(i, j).Text);
+                    currentLayerValueArray[j + i * 18] = map.shortToUshort(Int16.Parse(tableFullMap.GetControlFromPosition(i, j).Text));
                 }
             }
             map.mapInfoArray[listBoxMapLayer.SelectedIndex] = currentLayerValueArray;

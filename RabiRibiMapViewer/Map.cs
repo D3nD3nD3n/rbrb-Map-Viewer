@@ -88,6 +88,34 @@ namespace RabiRibiMapViewer
             }
             loaded = true;
         }
+
+        public short ushortToShort(ushort value)
+        {
+            short returnVal;
+            if (value > 32768)
+            {
+                returnVal = (short)(65536 - value);
+                returnVal *= -1;
+            }
+            else
+            {
+                returnVal = (short)value;
+            }
+
+            return returnVal;
+        }
+
+        public ushort shortToUshort(short value)
+        {
+            ushort returnVal;
+
+            if (value < 0)
+                returnVal = (ushort)(65536 + value);
+            else
+                returnVal = (ushort)value;
+
+            return returnVal;
+        }
     }
 
 }

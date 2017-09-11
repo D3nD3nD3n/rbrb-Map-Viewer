@@ -53,7 +53,7 @@ namespace RabiRibiMapViewer
             baseAddress = gameProcess.MainModule.BaseAddress;
 
             //scan decimal byte array 66 85 78 78 89 32 69 88
-            bexAddress = new IntPtr[] {IntPtr.Add(baseAddress, 0x12E29F0),//1.80e
+            bexAddress = new IntPtr[] {IntPtr.Add(baseAddress, 0x12E29F0),//1.85
                                             IntPtr.Add(baseAddress, 0x12DE9B0),//1.80
                                             IntPtr.Add(baseAddress, 0xA441C8),//1.75
                                             IntPtr.Add(baseAddress, 0xA45208),//1.75lm
@@ -63,7 +63,7 @@ namespace RabiRibiMapViewer
             };
 
             //scan decimal byte array 241 3 0 0
-            cocoaAddress = new IntPtr[] {   IntPtr.Add(baseAddress, 0x272099),//1.80e
+            cocoaAddress = new IntPtr[] {   IntPtr.Add(baseAddress, 0x272459),//1.85
                                             IntPtr.Add(baseAddress, 0x271509),//1.80 
                                             IntPtr.Add(baseAddress, 0x29DCD2),//1.75
                                             IntPtr.Add(baseAddress, 0x29ED92),//1.75lm
