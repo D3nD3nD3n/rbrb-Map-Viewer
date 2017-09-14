@@ -63,7 +63,7 @@ namespace RabiRibiMapViewer
             };
 
             //scan decimal byte array 241 3 0 0
-            cocoaAddress = new IntPtr[] {   IntPtr.Add(baseAddress, 0x272459),//1.85
+            cocoaAddress = new IntPtr[] {   IntPtr.Add(baseAddress, 0x27248f),//1.85
                                             IntPtr.Add(baseAddress, 0x271509),//1.80 
                                             IntPtr.Add(baseAddress, 0x29DCD2),//1.75
                                             IntPtr.Add(baseAddress, 0x29ED92),//1.75lm
